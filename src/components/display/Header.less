@@ -1,0 +1,59 @@
+.header-menu {
+    width: 100%;
+    background-color: #fff;
+    height: 40px;
+    position: fixed;
+    opacity: .8;
+    z-index: 1;
+    &:hover {
+        a,
+        button,
+        label {
+            color: #1d77dd;
+            i {
+                color: #1d77dd;
+            }
+        }
+    }
+    a {
+        text-decoration: none;
+        float: left;
+        position: relative;
+        left: 5%;
+        margin-top: 7px;
+    }
+    i {
+        color: #4a90e2;
+        vertical-align: middle;
+        margin-right: 8px;
+    }
+    label {
+        font-size: 24px;
+        color: #4a90e2;
+        display: inline-block;
+        text-transform: uppercase;
+        font-weight: 600;
+        vertical-align: middle;
+    }
+    button {
+        float: right;
+        right: 5%;
+        padding: 0;
+        border: 0;
+        position: relative;
+        margin-top: 7px;
+        background: none;
+        cursor: pointer;
+        outline: none;
+        transform: rotate(90deg);
+        i {
+            font-weight: 600;
+            width: 100%
+        }
+        &:active {
+            i {
+                transform: rotate(-45deg);
+            }
+        }
+    }
+}

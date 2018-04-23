@@ -1,0 +1,14 @@
+.grid-photo-wrap {
+  margin-bottom: 16px;
+}
+.grid-photo-wrap .grid-photo {
+  box-sizing: border-box;
+  border: 16px solid #fff;
+  border-radius: 5px;
+  width: 100%;
+}
+@media only screen and (max-width : 479px) and (min-width : 321px) {
+  .grid-photo-wrap .grid-photo {
+    border-width: 8px;
+  }
+}

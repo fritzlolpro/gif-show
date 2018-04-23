@@ -1,0 +1,23 @@
+.single-photo-display {
+  padding-top: 48px;
+}
+.single-photo-display .single-photo {
+  width: 40%;
+  margin: 0 auto;
+}
+.single-photo-display .single-photo.thumbnail {
+  width: 30%;
+  vertical-align: top;
+  display: inline-block;
+}
+.single-photo-display .single-photo.prev {
+  float: left;
+}
+.single-photo-display .single-photo.next {
+  float: right;
+}
+.single-photo-display .thumbnails {
+  width: 40%;
+  margin: 0 auto;
+  height: 250px;
+}

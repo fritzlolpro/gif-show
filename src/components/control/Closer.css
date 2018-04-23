@@ -1,0 +1,41 @@
+.closer {
+  position: relative;
+  top: 40px;
+  display: inline-block;
+  background-color: #fff;
+  border-radius: 50%;
+  height: 68px;
+  width: 68px;
+}
+.closer i {
+  font-weight: 900;
+  font-size: 32px;
+}
+.closer .icon {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  position: relative;
+  top: 18px;
+  left: 14px;
+}
+.closer .icon:before,
+.closer .icon:after {
+  position: absolute;
+  content: ' ';
+  height: 30px;
+  width: 8px;
+  background-color: #4a90e2;
+}
+.closer .icon:before {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.closer .icon:after {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+.closer .icon:hover:before,
+.closer .icon:hover:after {
+  background-color: #1d77dd;
+}

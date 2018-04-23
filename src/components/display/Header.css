@@ -1,0 +1,59 @@
+.header-menu {
+  width: 100%;
+  background-color: #fff;
+  height: 40px;
+  position: fixed;
+  opacity: .8;
+  z-index: 1;
+}
+.header-menu:hover a,
+.header-menu:hover button,
+.header-menu:hover label {
+  color: #1d77dd;
+}
+.header-menu:hover a i,
+.header-menu:hover button i,
+.header-menu:hover label i {
+  color: #1d77dd;
+}
+.header-menu a {
+  text-decoration: none;
+  float: left;
+  position: relative;
+  left: 5%;
+  margin-top: 7px;
+}
+.header-menu i {
+  color: #4a90e2;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+.header-menu label {
+  font-size: 24px;
+  color: #4a90e2;
+  display: inline-block;
+  text-transform: uppercase;
+  font-weight: 600;
+  vertical-align: middle;
+}
+.header-menu button {
+  float: right;
+  right: 5%;
+  padding: 0;
+  border: 0;
+  position: relative;
+  margin-top: 7px;
+  background: none;
+  cursor: pointer;
+  outline: none;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+.header-menu button i {
+  font-weight: 600;
+  width: 100%;
+}
+.header-menu button:active i {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}

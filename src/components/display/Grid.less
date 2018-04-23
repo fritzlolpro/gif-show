@@ -1,0 +1,18 @@
+@iphones: ~"only screen and (max-width : 479px) and (min-width : 321px)";
+@tablet: ~"only screen and (max-width : 1023px) and (min-width : 480px)";
+
+.photo-grid {
+    column-count: 3;
+    column-gap: 16px;
+    padding-top: 48px;
+    max-width: 1400px;
+    margin: 0 auto;
+
+
+
+    @media @iphones {
+        column-count: 2;
+        max-width: 365px;
+        column-gap: 8px;
+    }
+}

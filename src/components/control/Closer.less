@@ -1,0 +1,41 @@
+.closer {
+    position: relative;
+    top: 40px;
+    display: inline-block;
+    background-color: #fff;
+    border-radius: 50%;
+    height: 68px;
+    width: 68px;
+    i {
+        font-weight: 900;
+        font-size: 32px;
+    }
+    .icon {
+        position: absolute;
+        width: 32px;
+        height: 32px;
+        position: relative;
+        top: 18px;
+        left: 14px;
+        &:before,
+        &:after {
+            position: absolute;
+            content: ' ';
+            height: 30px;
+            width: 8px;
+            background-color: #4a90e2;
+        }
+        &:before {
+            transform: rotate(45deg);
+        }
+        &:after {
+            transform: rotate(-45deg);
+        }
+        &:hover {
+            &:before,
+            &:after {
+                background-color: #1d77dd;
+            }
+        }
+    }
+}

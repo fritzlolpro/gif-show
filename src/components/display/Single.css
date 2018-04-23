@@ -5,6 +5,11 @@
   width: 40%;
   margin: 0 auto;
 }
+@media only screen and (max-width : 479px) and (min-width : 321px), only screen and (max-width : 1023px) and (min-width : 480px) {
+  .single-photo-display .single-photo {
+    width: 90%;
+  }
+}
 .single-photo-display .single-photo.thumbnail {
   width: 30%;
   vertical-align: top;
@@ -20,4 +25,15 @@
   width: 40%;
   margin: 0 auto;
   height: 250px;
+}
+.single-photo-display .thumbnails > a {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+}
+@media only screen and (max-width : 479px) and (min-width : 321px), only screen and (max-width : 1023px) and (min-width : 480px) {
+  .single-photo-display .thumbnails {
+    width: 90%;
+  }
 }

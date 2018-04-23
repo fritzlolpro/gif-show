@@ -1,14 +1,18 @@
+@iphones: ~"only screen and (max-width : 479px) and (min-width : 321px)";
+@tablet: ~"only screen and (max-width : 1023px) and (min-width : 480px)";
+
 .closer {
     position: relative;
-    top: 40px;
+
     display: inline-block;
     background-color: #fff;
     border-radius: 50%;
     height: 68px;
     width: 68px;
-    i {
-        font-weight: 900;
-        font-size: 32px;
+    @media @iphones, @tablet {
+        top: 10px;
+        height: 48px;
+        width: 48px;
     }
     .icon {
         position: absolute;
@@ -24,6 +28,10 @@
             height: 30px;
             width: 8px;
             background-color: #4a90e2;
+            @media @iphones, @tablet {
+                height: 20px;
+                width: 6px;
+            }
         }
         &:before {
             transform: rotate(45deg);
@@ -36,6 +44,10 @@
             &:after {
                 background-color: #1d77dd;
             }
+        }
+        @media @iphones, @tablet {
+            top: 14px;
+            left: 5px;
         }
     }
 }

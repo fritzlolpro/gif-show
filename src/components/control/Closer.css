@@ -1,15 +1,17 @@
 .closer {
   position: relative;
-  top: 40px;
   display: inline-block;
   background-color: #fff;
   border-radius: 50%;
   height: 68px;
   width: 68px;
 }
-.closer i {
-  font-weight: 900;
-  font-size: 32px;
+@media only screen and (max-width : 479px) and (min-width : 321px), only screen and (max-width : 1023px) and (min-width : 480px) {
+  .closer {
+    top: 10px;
+    height: 48px;
+    width: 48px;
+  }
 }
 .closer .icon {
   position: absolute;
@@ -27,6 +29,13 @@
   width: 8px;
   background-color: #4a90e2;
 }
+@media only screen and (max-width : 479px) and (min-width : 321px), only screen and (max-width : 1023px) and (min-width : 480px) {
+  .closer .icon:before,
+  .closer .icon:after {
+    height: 20px;
+    width: 6px;
+  }
+}
 .closer .icon:before {
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
@@ -38,4 +47,10 @@
 .closer .icon:hover:before,
 .closer .icon:hover:after {
   background-color: #1d77dd;
+}
+@media only screen and (max-width : 479px) and (min-width : 321px), only screen and (max-width : 1023px) and (min-width : 480px) {
+  .closer .icon {
+    top: 14px;
+    left: 5px;
+  }
 }

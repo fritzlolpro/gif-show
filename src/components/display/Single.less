@@ -1,8 +1,14 @@
+@iphones: ~"only screen and (max-width : 479px) and (min-width : 321px)";
+@tablet: ~"only screen and (max-width : 1023px) and (min-width : 480px)";
 .single-photo-display {
     padding-top: 48px;
     .single-photo {
         width: 40%;
         margin: 0 auto;
+        @media @iphones,
+        @tablet {
+            width: 90%;
+        }
         &.thumbnail {
             width: 30%;
             vertical-align: top;
@@ -19,5 +25,14 @@
         width: 40%;
         margin: 0 auto;
         height: 250px;
+        > a {
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%);
+        }
+        @media @iphones,
+        @tablet {
+            width: 90%;
+        }
     }
 }

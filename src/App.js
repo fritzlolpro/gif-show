@@ -2,10 +2,10 @@ import React, {Component} from 'react'
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom"
 import './App.css'
 
-import Grid from './components/display/Grid'
-import Single from './components/display/Single'
-import Header from './components/display/Header'
-import Loader from './components/display/Loader'
+import Grid from './components/display/Grid/Grid'
+import Single from './components/display/Single/Single'
+import Header from './components/display/Header/Header'
+import Loader from './components/display/Loader/Loader'
 
 const apiUrl = 'https://api.giphy.com/v1/gifs/random?api_key=xgcnvYuqk4vP1WQQtWPz6F1A0B4WHHdA&ta' +
         'g=&rating=G'

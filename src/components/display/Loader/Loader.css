@@ -1,0 +1,29 @@
+.loader {
+  display: inline-block;
+  margin: 0 auto;
+  width: 46px;
+  height: 46px;
+  background: url('../../../img/spiner.png') no-repeat;
+  -webkit-animation: infinite-spinning 1s 1s infinite;
+          animation: infinite-spinning 1s 1s infinite;
+}
+@-webkit-keyframes infinite-spinning {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@keyframes infinite-spinning {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}

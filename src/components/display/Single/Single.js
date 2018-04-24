@@ -2,6 +2,7 @@ import React from 'react'
 import Closer from '../../control/Closer/Closer'
 import Photo from '../Photo/Photo'
 import './Single.css'
+import {Link} from 'react-router-dom'
 
 const Single = ({photos, activeId, onClick}) => {
 
@@ -18,7 +19,7 @@ const Single = ({photos, activeId, onClick}) => {
             <div className='single-photo'>
                 {!!selectedPhoto
                     ? <Photo photo={selectedPhoto} clickable={false}/>
-                    : <div>error</div>}
+                    : <div className='error-output'>Error loading photo. <br/> <Link to='/'> To the main page </Link> </div>}
             </div>
 
             <div className='thumbnails'>

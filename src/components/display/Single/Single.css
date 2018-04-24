@@ -21,6 +21,9 @@
 .single-photo-display .single-photo.next {
   float: right;
 }
+.single-photo-display .single-photo .error-output {
+  margin-bottom: 40px;
+}
 .single-photo-display .thumbnails {
   width: 40%;
   margin: 0 auto;

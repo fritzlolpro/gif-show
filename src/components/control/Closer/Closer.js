@@ -5,10 +5,9 @@ import './Closer.css'
 const Closer = () => {
     return (
         <Link to="/">
-        <div className='closer'>
-
-            <div className="icon"></div>
-        </div>
+            <div className='closer'>
+                <div className="icon"></div>
+            </div>
         </Link>
     )
 }

@@ -22,17 +22,21 @@ class App extends Component {
             activePhotoId: null
         }
     }
+
     componentDidMount() {
         this.searchForNumberOfPhotos(photosToDisplayPerPage)
     }
+
     callPhotosApi = () => {
         return fetch(apiUrl)
     }
+
     searchForNumberOfPhotos = (number) => {
         for (let i = 0; i < number; i++) {
             this.searchPhoto()
         }
     }
+
     searchPhoto = () => {
         this.setState({
             isLoading: true
@@ -42,11 +46,15 @@ class App extends Component {
                 .then(blob => blob.json())
                 .then(data => this.setPhotosList(data.data))
                 .then(() => this.setState(prevState => ({isLoading: false})))
-                .catch(error => this.setState({
-                    error: error.toString()
-                }))
+                .catch(error => () => {
+                    this.setState({
+                        error: error.toString()
+                    })
+                    this.setState(prevState => ({isLoading: false}))
+                })
         })
     }
+
     setPhotosList = (result) => {
         const {results} = this.state
         this.setState({
@@ -56,6 +64,7 @@ class App extends Component {
             ]
         })
     }
+
     onHandlePhotoClick = (e) => {
         // get id of clicked photo, it stored in html via data
         if (e && e.target && e.target.getAttribute('data-id')) {
@@ -67,6 +76,7 @@ class App extends Component {
             this.setState({activePhotoId: targetPhotoId})
         }
     }
+
     onHandleRefresh = () => {
         this.setState({
             results: []
@@ -74,34 +84,54 @@ class App extends Component {
             this.searchForNumberOfPhotos(photosToDisplayPerPage)
         })
     }
-    render() {
-        const {results, isLoading, activePhotoId} = this.state
-        const loadMore = (number) => this.searchForNumberOfPhotos(number)
+
+    renderAppOrError = (error) => {
         const handleClick = (e) => this.onHandlePhotoClick(e)
+        const loadMore = (number) => this.searchForNumberOfPhotos(number)
+        const {results, isLoading, activePhotoId} = this.state
+
+        if (error) {
+            return (
+                <div className='error-output'>Some error uccured
+                    <br/>{error}</div>
+            )
+        } else {
+            return (
+                <React.Fragment>
+                    <Route
+                        exact
+                        path='/'
+                        render={() => (
+                        <div onClick={handleClick}>
+                            <Grid
+                                loadMore={loadMore}
+                                photosToDisplayPerPage={photosToDisplayPerPage}
+                                isLoading={isLoading}
+                                photos={results}/>
+                        </div>
+                    )}/>
+                    <Route
+                        path='/view/:photoId'
+                        render={() => (<Single activeId={activePhotoId} photos={results} onClick={handleClick}/>)}/>
+                </React.Fragment>
+            )
+        }
+    }
+
+    render() {
+        const {isLoading, error} = this.state
         const handleRefresh = () => this.onHandleRefresh()
+
         return (
             <Router>
                 <div className="App">
                     <Header handleRefresh={handleRefresh}/>
                     <Switch>
-                        <Route
-                            exact
-                            path='/'
-                            render={() => (
-                            <div onClick={handleClick}>
-                                <Grid
-                                    loadMore={loadMore}
-                                    photosToDisplayPerPage={photosToDisplayPerPage}
-                                    isLoading={isLoading}
-                                    photos={results} />
-                            </div>
-                        )}/>
-                        <Route
-                            path='/view/:photoId'
-                            render={() => (<Single activeId={activePhotoId} photos={results} onClick={handleClick}/>)}/>
+                        {this.renderAppOrError(error)}
+                        {isLoading && <Loader/>}
                     </Switch>
-                    {isLoading && <Loader/>}
                 </div>
+
             </Router>
         )
     }

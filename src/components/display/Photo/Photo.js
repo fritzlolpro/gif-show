@@ -8,6 +8,7 @@ const Photo = ({
 }) => {
     return (
         <div className='grid-photo-wrap'>
+            {photo &&
             <Link
                 to={clickable
                 ? `../view/${photo.id}`
@@ -17,7 +18,7 @@ const Photo = ({
                     alt={photo.title}
                     data-id={photo.id}
                     className='grid-photo'/>
-            </Link>
+            </Link>}
         </div>
     )
 }

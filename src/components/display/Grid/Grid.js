@@ -22,9 +22,10 @@ class Grid extends React.Component {
 
     render() {
         const {photos} = this.props
+
         return (
             <div className='photo-grid'>
-                {photos.map((photo, i) => <Photo photo={photo} key={i}></Photo>)}
+                {photos ? photos.map((photo, i) => <Photo photo={photo} key={i}></Photo>) : <div className='error-output'>Nothing to display</div>}
             </div>
         )
     }
